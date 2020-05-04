@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tip Calculator</title>
+<style>
+  body {
+    font-family: calibri;
+  }
+  
+  .container {
+    width: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: groove;
+  }
+  
+  .header {
+    font-size: 24px;
+	color: white;
+	background-color: black;
+	padding: 10px;
+  }
+</style>
+<script src="tipCalc.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">TIP CALCULATOR</div><br/>
+    <form onsubmit="return false;" method="post" name="nameForm">
+      <label for="bill">Bill Amount: $</label>
+      <input type="text" name="bill" id="bill" placeholder="0.00" required /><br/><br/>
+	  <label for="service">How was your service?</label>
+	  <select id="service" required>
+	    <option value="" disabled selected>--Select service level--</option>
+        <option value="great">Great - 25%</option>
+        <option value="good">Good - 20%</option>
+        <option value="average">Average - 15%</option>
+        <option value="satisfactory">Satisfactory - 10%</option>
+      </select><br/><br/>
+	  <label for="party">How many people are splitting the bill?</label>
+      <input type="text" name="party" id="party" placeholder="Number of people" required /><br/><br/>
+	  <input type="submit" name="calc" value="Calculate" onclick="calcButton()" /><br/><br/>
+    </form>
+    <div id="total"></div>
+  </div>
+</body>
+</html>
